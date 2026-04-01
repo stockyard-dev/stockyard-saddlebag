@@ -1,0 +1,9 @@
+services:
+  saddlebag:
+    image: ghcr.io/stockyard-dev/stockyard-saddlebag:latest
+    ports: ["8970:8970"]
+    environment: [PORT=8970, DATA_DIR=/data]
+    volumes: [saddlebag-data:/data]
+    restart: unless-stopped
+volumes:
+  saddlebag-data:
